@@ -1,282 +1,212 @@
 <!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <title>General Airports in the World</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
-    <style>
-      body { 
-        margin: 0; 
-        padding: 0; 
-      }
-      #map { 
-        position: absolute; 
-        top: 0; 
-        bottom: 0; 
-        width: 100%; 
-      }
-    </style>
-  </head>
-  <body>
-    <style>
-#menu {
-background: #fff;
-position: absolute;
-z-index: 1;
-top: 10px;
-right: 10px;
-border-radius: 3px;
-width: 120px;
-border: 1px solid rgba(0,0,0,0.4);
-font-family: 'Open Sans', sans-serif;
-}
- 
-#menu a {
-font-size: 13px;
-color: #404040;
-display: block;
-margin: 0;
-padding: 0;
-padding: 10px;
-text-decoration: none;
-border-bottom: 1px solid rgba(0,0,0,0.25);
-text-align: center;
-}
- 
-#menu a:last-child {
-border: none;
-}
- 
-#menu a:hover {
-background-color: #f8f8f8;
-color: #404040;
-}
- 
-#menu a.active {
-background-color: #3887be;
-color: #ffffff;
-}
- 
-#menu a.active:hover {
-background: #3074a4;
-}
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
 </style>
+</head>
+<body class="w3-light-grey">
+  
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-xxxlarge"><b>GEOS 472 - Final Project Group 6: <span class="w3-tag"> Airspace Closures and Their Impact on Normal Flight Routes</span> </b></h1>
+    <h6>Cartographic Research</h6>
+  </header>
+
+  <!-- Image header -->
+  <!-- INSERT IMAGE OR MAP HERE -->
+  
+  <!-- 
+  <header class="w3-display-container w3-wide" id="home">
+    <img class="w3-image" src="/w3images/jane.jpg" alt="Fashion Blog" width="1600" height="1060">
+    <div class="w3-display-left w3-padding-large">
+      <h6><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">SUBSCRIBE</button></h6>
+    </div>
+  </header>
+  
+ -->
+
+  <!-- Grid -->
+  
+  
+  <!-- Blog entries <div class="w3-row w3-padding w3-border">  -->
+  <div class="w3-content" style="max-width:1600px"> 
+    <!-- Blog entries -->
+    <div class="w3-content" style="max-width:1600px">
+    
+      <!-- Blog entry 1 -->
+      <div class="w3-content" style="max-width:1600px">
+        <div class="w3-center">
+        </div>
+
+  <!-- Insert Image or Map here for Blog Post 1:
+  
+        <div class="w3-justify">
+          <img src="/w3images/girl_hat.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16">
+          
+          -->
+          
+          <p><strong>Introduction:</strong> 
+          With the recent Russian invasion of the Ukraine, countries from around the world have closed their airspaces to Russian aircraft. Russia has responded similarly to such moves. The purpose of our final project is to see how an airspace closure of a given country can alter or impact the normal air routes between major airports. Would airlines need to make use of a midway point in order to go around a particular country? In other situations natural disasters and the transportation of dignitaries can cause the halt of civilian flights to a particular airport^1. If an airport is not available for landing, what would be the closest major airport that civilian aircraft can use (especially if it is a long flight which needs to refuel). </p>
+            
+            
+            
+            
+          <p>
+          Our preliminary thought to answering this kind of question would be: what would the world’s airspace look like if we closed off airspaces above individual countries? We know generally that airplanes fly in great circle routes from their departing to destination airports. What does large rerouting of flights look like and what are the impacts or costs of having an air route? For the purposes of our project, we can look at airline routes between some of the major airports.
+          </p>
+          
+          
+          <p>
+          “For every aircraft [an] optimal flight plan exists (it can be fuel-optimal or time-optimal
+or optimal according to another objective) which includes both the altitude profile and
+the speed at every point along the path” (Kostitsyna et al. 2014). Ideally the direct and shortest path from an origin to a destination, is something which air operators strive for as it offers the lowest possible fuel consumption, and usually the shortest travel time. However, “choosing the most optimal route, that would allow the operator to minimize fuel consumption, is one of the most important challenges in the contemporary air transportation branch” (Majka et al. 2014). Making such matters even more complex is the fact that flight routes are susceptible to political conflicts which may result in airspace closures. Flight Information Regions (or FIRs), are established for air traffic control purposes (Flight information regions, 2012), and the responsibility to oversee these are given to the closest countries. Smaller countries tend to have one FIR, while larger countries have many. According to UNCLOS (United Nations Convention on the Law of the Sea) airspace sovereignty extends only 12 nautical miles from the coastline of a particular country. The FIR though extends much further. As we see in the map BELOW?, which shows the flight route of an Aeroflot Flight Route between Moscow and Kaliningrad, before and after the airspace ban imposed by the Baltic and Scandinavian countries, the actual ban only applied to an area within the 12 miles from the coastline shown on the map, but the flight path taken by Aeroflot flew on the boundary of the FIR administered by different countries, much further away from the actual sovereign airspace of the individual countries. It was only for a small portion of the flight route, in which the Aeroflot flights actually flew within the FIRs of two countries which had imposed an airspace ban. These two countries were Lithuania and Latvia, and while Aeroflot flights continued to fly within the FIR of these countries the flight route remained outside of the actual sovereign airspace of these countries.
+          </p>
+		  
+		  <iframe
+              width="1600"
+              height="650"
+              frameborder="0" style="border:0"
+              src="map1.html"
+              allowfullscreen>
+              </iframe>
+          
+          <p>
+          This presents us with an interesting question. Why were Russian airlines such as Aeroflot mostly avoiding flight within the FIRs of the countries and primarily only flying along the boundaries of the FIRs, even though the airspace ban was only legally valid upto 12 miles from the coastline? While we may not have the answers for such a question, we can look more into other cases where this has occurred. 
+          </p>
+          
+          <p>
+Airspace closures for political reasons are not uncommon, and leading up to the recent airspace bans over the Russian invasion of Ukraine, such acts seem to have increased in recent years. According to Majka et al, “in over its 100-year history, aviation has witnessed many phenomena of airspace bypass due to safety or political issues. One of the most iconic and interesting cases [was] the Soviet airspace during the Cold War, which was very restricted to other countries, resulting in airlines not being allowed to overfly it. As a result, in order to maintain connection between Asian and European countries, flights had to follow polar routes and with the aircraft and their technology at the time, were forced to perform a stopover and refuel in Anchorage in Alaska” (2014). In 2017 an airspace closure was imposed against Qatar-registered aircraft by Egypt, Bahrain, Saudi Arabia and United Arab Emirates. This resulted in Qatari aircraft to “perform deviations on the routes to Europe and Africa in order to bypass the airspaces of afore-mentioned states” (Majka et al, 2014). These deviations were no doubt costly for Qatar-based airlines which had to use Iranian airspace towards the east, as all airspace towards the west of the country was restricted. This meant that all flights westward from Qatar, had to take longer paths around the Arab bloc countries. In 2020, Qatar Airways even sought a $5 billion compensation from Arab bloc over the airspace ban imposed against it (Cornwell 2020). Then in 2021, the forced landing of a Ryanair flight 4978 over Belarus airspace resulted in a Safety Directive from the European Union Safety Agency (EASA) instructing flight operators to not fly in the Belarussian airspace due to safety reasons. Finally, in 2022 we see various airspace bans imposed over the Russian invasion of Ukraine. Clearly there has been an increase in airspace restrictions due to political issues. How this has had an impact on flight operations and would impact flight operations in the future is still something to be determined. How airline companies have responded to airspace closures is definitely something which we can explore more in depth and study carefully through data visualization on maps. The distance traveled and travel time from an origin to a destination are important pieces of information which may be useful to airline companies, especially when it comes to determining shortest alternative routes during times when fuel prices are high.
+          </p>
+          
+          
+          
+        </div>
+      </div>
+      <hr>
+
+      <!-- Blog entry 2 -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+        </div>
+
+        <div class="w3-justify">
+            <!-- Blog entry 2:
+            
+          <img src="/w3images/man_hat.jpg" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+          <p><strong>Hats!</strong> The trend this summer is hats for men!</p>
+          <p>Some text about this blog entry. Fashion fashion and mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies
+            mi non congue ullam corper. Praesent tincidunt sedtellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+            
+             -->
+             
+          
+          <!-- Example of comment field -->
+          <div id="demo2" style="display:none">
+            <div class="w3-row">
+              <hr>
+              <div class="w3-col l2 m3">
+                <img src="/w3images/girl_train.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Amber <span class="w3-opacity w3-medium">April 26, 2015, 10:52 PM</span></h4>
+                <p>Love your blog page! Simply the best! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
+              </div>
+            </div>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="/w3images/girl.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Angie <span class="w3-opacity w3-medium">April 23, 2015, 9:12 PM</span></h4>
+                <p>Love hats!!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>References:</h3>
 
 
-    <nav id="menu"></nav>
-    <div id='map'></div>
-    <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiamxpNDciLCJhIjoiY2wwMjc5dmRqMHE5eDNvcnlwd29zY3EyayJ9.zcqlSyi6nKyEO9JU36hy1w';
-const map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/jli47/cl179as98001p15ogp4v12bim',
-center: [-246.005,13.788],
-zoom: 2.19
-}); 
+        <div class="w3-justify">
+          <p>
+Flight information regions (2012). In Allan Beaver (Ed.), (1st ed.). Oxford University Press.
+</p>
 
-map.addControl(new mapboxgl.NavigationControl(), 'top-left')
-map.on('click', (event) => {
-const features = map.queryRenderedFeatures(event.point, {
-layers: ['major-international-airports-dra']
-});
+<p>
+Kostitsyna, I., Löffler, M., Polishchuk, V., Ferro, A., Luccio, F., & Widmayer, P. (2014). Optimizing airspace closure with respect to politicians’ egos. Lecture Notes in Computer Science, , 264-276. https://doi.org/10.1007/978-3-319-07890-8_23
+</p>
 
-if (!features.length) {
-return;
+<p>
+Majka, A., Ostręga, P., & Pasich, A. (2022). Influence of airspace avoidance due to political and safety issues on flight efficiency and environment. IOP Conference Series. Materials Science and Engineering, 1226(1), 012023. https://doi.org/10.1088/1757-899X/1226/1/012023
+</p>
+
+<p>
+Cornwell, A. (2020, July 22). Qatar Airways seeks $5 billion compensation from Arab Bloc over airspace ban. Reuters. Retrieved April 10, 2022, from https://www.reuters.com/article/us-gulf-qatar-qatar-airways-idUSKCN24N1F9
+</p>
+          
+    <!-- END BLOG ENTRIES -->
+    </div>
+
+
+  <!-- END GRID -->
+  </div>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Subscribe Modal -->
+<div id="subscribe" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-white">
+      <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+      <h2 class="w3-wide">SUBSCRIBE</h2>
+      <p>Join my mailing list to receive updates on the latest blog posts and other things.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey" style="padding:32px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
 }
 
-const feature = features[0];
-const popup = new mapboxgl.Popup({ offset: [0, -30] })
-
-.setLngLat(feature.geometry.coordinates)
-.setHTML(
-`<h3>${feature.properties.C_Airports}</h3><p>${feature.properties.Deccription}</p><p>Running Situation:${feature.properties.Condition}</p><p>Routes:${feature.properties.Routes}</p>`
-)
-.addTo(map)
-
-});
-
-
-
-map.on('load', function() {
-map.addSource(PEK[0], { type: 'vector', 
-url: 'mapbox://jli47.awvv3xfu' });
-map.addLayer({
-'id': PEK[0],
-'type': 'line',
-'source': PEK[0],
-'source-layer': 'China_Beijing_PEK-ar3sl8',
-'layout': {
-'visibility': 'visible',
-'line-join': 'round',
-'line-cap': 'round'
-},
-
-'paint': {
-'line-color': '#bc9494',
-
-'line-width': 1
+function likeFunction(x) {
+  x.style.fontWeight = "bold";
+  x.innerHTML = "✓ Liked";
 }
-});
+</script>
 
-map.addSource(PEK[1], { type: 'vector', 
-url: 'mapbox://jli47.6lb73zty' });
-map.addLayer({
-'id': PEK[1],
-'type': 'line',
-'source': PEK[1],
-'source-layer': 'Canada_Toronto_YYZ-97n60b',
-'layout': {
-'visibility': 'visible',
-'line-join': 'round',
-'line-cap': 'round'
-},
-
-'paint': {
-'line-color': '#bc9494',
-
-'line-width': 1
-}
-});
-
-
-map.addSource(PEK[2], { type: 'vector', 
-url: 'mapbox://jli47.7c1s9l83' });
-map.addLayer({
-'id': PEK[2],
-'type': 'line',
-'source': PEK[2],
-'source-layer': 'Russia_Moscow_SVO-dt6cnl',
-'layout': {
-'visibility': 'visible',
-'line-join': 'round',
-'line-cap': 'round'
-},
-
-'paint': {
-'line-color': '#bc9494',
-
-'line-width': 1
-}
-});
-
-
-map.addSource(PEK[3], { type: 'vector', 
-url: 'mapbox://jli47.b8libsy4' });
-map.addLayer({
-'id': PEK[3],
-'type': 'line',
-'source': PEK[3],
-'source-layer': 'USA_NewYork_JFK-9cykql',
-'layout': {
-'visibility': 'visible',
-'line-join': 'round',
-'line-cap': 'round'
-},
-
-'paint': {
-'line-color': '#bc9494',
-
-'line-width': 1
-}
-});
-
-map.addSource(PEK[4], { type: 'vector', 
-url: 'mapbox://jli47.2h2blxx8' });
-map.addLayer({
-'id': PEK[4],
-'type': 'line',
-'source': PEK[4],
-'source-layer': 'Mexico_MexicoCity_MEX-105bod',
-'layout': {
-'visibility': 'visible',
-'line-join': 'round',
-'line-cap': 'round'
-},
-
-'paint': {
-'line-color': '#bc9494',
-
-'line-width': 1
-}
-});
-
-
-map.addSource(PEK[5], { type: 'vector', 
-url: 'mapbox://jli47.1mwqird2' });
-map.addLayer({
-'id': PEK[5],
-'type': 'line',
-'source': PEK[5],
-'source-layer': 'Turkey_Istanbul_IST-43a4uz',
-'layout': {
-'visibility': 'visible',
-'line-join': 'round',
-'line-cap': 'round'
-},
-
-'paint': {
-'line-color': '#bc9494',
-
-'line-width': 1
-}
-});
-
-
-map.addSource(PEK[6], { type: 'vector', 
-url: 'mapbox://jli47.3cvosd7l' });
-map.addLayer({
-'id': PEK[6],
-'type': 'line',
-'source': PEK[6],
-'source-layer': 'Spain_Barcelona_BCN-02czca',
-'layout': {
-'visibility': 'visible',
-'line-join': 'round',
-'line-cap': 'round'
-},
-
-'paint': {
-'line-color': '#bc9494',
-
-'line-width': 1
-}
-});
-
-});
-
-var PEK = ['Beijing (PEK)','Toronto (YYZ)','Moscow (SVO)', 'New York (JFK)', 'Mexico-City (MEX)', 'Istanbul (IST)', 'Barcelona (BCN)']
-var toggleableLayerIds = [ PEK[0], PEK[1], PEK[2], PEK[3], PEK[4], PEK[5], PEK[6]];
- 
-for (var i = 0; i < toggleableLayerIds.length; i++) {
-var id = toggleableLayerIds[i];
- 
-var link = document.createElement('a');
-link.href = '#';
-link.className = 'active';
-link.textContent = id;
- 
-link.onclick = function (e) {
-var clickedLayer = this.textContent;
-e.preventDefault();
-e.stopPropagation();
- 
-var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
- 
-if (visibility === 'visible') {
-map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-this.className = '';
-} else {
-this.className = 'active';
-map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-}
-};
- 
-var layers = document.getElementById('menu');
-layers.appendChild(link);
-}
-
-    </script>
-  </body>
+</body>
 </html>
