@@ -5,6 +5,7 @@ https://ubc-geos472-spring2022.github.io/FProject-G6/index.html
 
 Map: https://ubc-geos472-spring2022.github.io/FProject-G6/Final/Airports.html
 
+![Kaliningrad_Moscow](https://user-images.githubusercontent.com/97953213/163657704-8d4d3451-80f0-424b-bfd2-77b436649e4b.png)
 
 https://ubc-geos472-spring2022.github.io/FProject-G6/RusMap/rus_map.html
 
