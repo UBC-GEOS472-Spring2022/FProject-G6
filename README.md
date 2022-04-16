@@ -10,6 +10,9 @@ Map: https://ubc-geos472-spring2022.github.io/FProject-G6/Final/Airports.html
 https://ubc-geos472-spring2022.github.io/FProject-G6/RusMap/rus_map.html
 
 ![IcelandEruption](https://raw.githubusercontent.com/UBC-GEOS472-Spring2022/FProject-G6/main/IcelandEruption.png)
+
 https://ubc-geos472-spring2022.github.io/FProject-G6/IcelandEruption/IcelandAshCloud.html
+
+![QatarMap](https://raw.githubusercontent.com/UBC-GEOS472-Spring2022/FProject-G6/main/QatarMap.png)
 
 https://ubc-geos472-spring2022.github.io/FProject-G6/QatarMap/QatarMap.html
