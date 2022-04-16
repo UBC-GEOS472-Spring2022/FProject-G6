@@ -1,0 +1,296 @@
+<!DOCTYPE html><html><head>
+    <title>Change of Doha-Khartoum Flight Paths during the Qatar diplomatic crisis</title>
+    <!-- Data Derived From: http://www.gcmap.com/featured/20170605 and http://www.gcmap.com/featured/20170608 -->
+    <meta charset="utf-8">
+
+    <!-- Leaflet styles and code. Place in the <head></head> element. -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="leaflet.js"></script>
+
+    <!-- jQuery is a library that simplifies many things in JavaScript. 
+	     We'll use it to retrieve data from the web. -->
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <script src="./p5.min.js"></script>
+    <!-- this should be unnecessary in this code, as we aren't using p5.js...
+       but since I'm showing you the code running in the p5 editor,
+       the editor expects p5.js to be here...
+       otherwise, it gives you a "TypeError: window.p5 is undefined".
+       We won't use any of p5.js's commands, though! -->
+
+    <script src="leaflet.js"></script>
+    <script src="mapbox.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="leaflet.awesome-markers.js"></script>
+    <style type="text/css">
+      button {
+          width: 285px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="mapid" style="width: 1000px; height: 500px;"></div>
+    <!-- Size of our web Map -->
+
+    <div>
+      Flight Route Between Doha (Qatar) and Khartoum (Sudan) during the Qatar diplomatic crisis in which Saudi Arabia, the United Arab Emirates, Bahrain and Egypt severed diplomatic relations with Qatar and banned Qatar-registered planes and ships from utilising their airspace and sea routes.
+
+    </div>
+    
+    <div>
+    </div>
+    <div class="btn-group">
+      <button type="button" id="normal_route" class="btn btn-primary">
+        Route (Before Qatar diplomatic crisis)
+      </button>
+.           Approximately 1218 Nautical Miles
+
+      </div>
+    <div class="btn-group1">
+
+      <button type="button" id="alt_route" class="btn btn-primary">
+        Route (During Qatar diplomatic crisis)
+      </button>
+.           Approximately 2670 Miles
+    </div>
+    
+        <div class="btn-group2">
+
+      <button type="button" id="banned_routesON" class="btn btn-danger">
+        Banned Routes (ON)
+      </button>
+          
+          <button type="button" id="banned_routesOFF" class="btn btn-danger">
+        Banned Routes (OFF)
+      </button>
+    </div>
+    
+
+    <div id="controls" style="margin: 15px;">
+      <button id="showAllExistingAir">
+        Flight Information Regions (FIRs)
+      </button>
+      <button id="restricted_airspace">
+                Restricted FIRs
+      </button>
+      <button id="hideAllExistingAir">
+        Turn off FIRs
+      </button>
+      <span style="display:inline-block; width: 50px"></span>
+      </div>
+    <div>
+      <button type="button" id="hide" class="btn btn-success">Clear All</button>
+    </div>
+
+    <script>
+      
+              // Make a Leaflet map with L.map().
+              // Store the map in the variable 'map'.
+              // "mapid" is the 'id' of the DOM element to contain the map.
+              var map = L.map('mapid', {
+                  center: [19.286212399078373, 45.89202000510501], 
+                  					zoom: 5
+                } // this object holds map options
+              );
+
+              var topoTiles = L.tileLayer(
+                'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                  maxZoom: 18,
+                  attribution: 'Basemap data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Basemap style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+
+                }
+              ).addTo(map);
+
+              // load GeoJSON from a file on the web
+              // $ is jQuery.
+
+            var planeIcon = L.AwesomeMarkers.icon({
+              prefix: 'fa', //font awesome rather than bootstrap
+              markerColor: 'red', // see colors above
+              icon: 'plane' //http://fortawesome.github.io/Font-Awesome/icons/
+            });
+
+            var cityIcon = L.AwesomeMarkers.icon({
+              prefix: 'fa', //font awesome rather than bootstrap
+              markerColor: 'orange', // see colors above
+              opacity: 0.8,
+              fillOpacity: 0.8,
+              icon: 'compass' //http://fortawesome.github.io/Font-Awesome/icons/
+            });
+
+            var promise = $.getJSON("https://raw.githubusercontent.com/UBC-GEOS472-Spring2022/FProject-G6/main/MENAmap.geojson");
+          promise.then(function(data) {
+
+            var main_alignment = L.geoJson(data, {
+              filter: function(feature, layer) {
+                      return feature.properties.Route == "Normal";
+                  },
+              });
+            var alt_alignment = L.geoJson(data, {
+              filter: function(feature, layer) {
+                      return feature.properties.Route == "Detour";
+                  },
+              });
+            
+            var all_banned_routes = L.geoJson(data, {
+              filter: function(feature, layer) {
+                      return feature.properties.Route == "Closed";
+                  },
+              });
+            
+            
+            
+            
+            var restricted_airspace = L.geoJson(data, {
+                            style: {
+          fillColor: '#E91E63',
+          weight: 2,
+          opacity: 1,
+          color: 'white',
+          dashArray: '3',
+          fillOpacity: 0.3
+       },
+
+                  filter: function(feature, layer) {
+
+
+
+            return feature.properties.Restricted == "Yes";
+                  },
+                  pointToLayer: function(feature, latlng) {
+                      return L.marker(latlng, {
+                      }).on('mouseover', function() {
+                          this.bindPopup(feature.properties.Dest_City).openPopup();
+                      });
+                  }
+
+              });
+
+            // deleted var normal_route = L.geoJson(data
+            // deleted var alt_route = L.geoJson(data
+
+            var FIRregions = L.geoJson(data, {
+              style: {
+          fillColor: '#009688',
+          weight: 2,
+          opacity: 1,
+          color: 'white',
+          dashArray: '3',
+          fillOpacity: 0.3
+       },
+
+                  filter: function(feature, layer) {
+
+
+
+            return feature.properties.type == "FIR";
+                  },
+                  pointToLayer: function(feature, latlng) {
+                      return L.marker(latlng, {
+                      }).on('mouseover', function() {
+                          this.bindPopup(feature.properties.Dest_City).openPopup();
+                      });
+                  }
+
+              });
+
+            
+            function onEachAirport(feature, layer) {
+
+                        console.log('Binding to point.');
+                        console.log(feature.properties.Airport_Name);
+                        console.log(feature.properties);
+                        console.log(layer);
+                        layer.bindPopup(feature.properties.Airport_Name);
+            };
+            
+            
+            var airports = L.geoJson(data, {
+              filter: function(feature, layer) {
+                       return feature.properties.type == "1";
+                  },
+              pointToLayer: function(feature, latlng) {
+                      return L.marker(latlng, {
+                          icon: planeIcon
+                      }).on('click', function() {
+                    console.log('This is where you would set the value of a <div> to be ',feature.properties.Airport_Name)
+                    this.bindPopup(feature.properties.Airport_Name).openPopup();
+                });
+              },
+              onEachFeature: onEachAirport
+              });
+
+
+
+            //Figure this out
+             // intersects.addTo(map)
+              // main_alignment.addTo(map)
+
+              // The JavaScript below is new
+              $("#normal_route").click(function() {
+
+                  map.addLayer(main_alignment)
+                  map.addLayer(airports)
+                  map.removeLayer(alt_alignment)
+              });
+            //
+            
+            $("#restricted_airspace").click(function() {
+
+                  map.addLayer(restricted_airspace)
+              });
+            
+            $("#alt_route").click(function() {
+
+                  map.addLayer(alt_alignment)
+                  map.removeLayer(main_alignment)
+                  map.addLayer(airports)
+
+              });
+
+            $("#banned_routesON").click(function() {
+
+                  map.addLayer(all_banned_routes)
+
+
+              });
+            
+            $("#banned_routesOFF").click(function() {
+
+                  map.removeLayer(all_banned_routes)
+
+
+              });
+            
+            $("#hide").click(function() {
+
+                  map.removeLayer(main_alignment)
+
+                  map.removeLayer(alt_alignment)
+                  map.removeLayer(airports)
+                  map.removeLayer(FIRregions)
+                  map.removeLayer(restricted_airspace)
+                  map.removeLayer(all_banned_routes)
+              
+              });
+            $("#showAllExistingAir").click(function() {
+                  map.addLayer(FIRregions)
+
+
+              });
+            $("#hideAllExistingAir").click(function() {
+                  map.removeLayer(FIRregions)
+                 map.removeLayer(restricted_airspace)
+
+
+              });
+
+          });
+    </script>
+  
+
+</body></html>
