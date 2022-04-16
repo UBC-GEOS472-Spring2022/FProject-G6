@@ -1,6 +1,7 @@
 Group Essay with visuals
 https://ubc-geos472-spring2022.github.io/FProject-G6/index.html
 
+![Airports](https://user-images.githubusercontent.com/97953213/163657582-dee333e1-bac0-4231-8e7f-38f35b56da33.png)
 
 Map: https://ubc-geos472-spring2022.github.io/FProject-G6/Final/Airports.html
 
