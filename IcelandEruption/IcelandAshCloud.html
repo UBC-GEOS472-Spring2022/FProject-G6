@@ -41,6 +41,49 @@
 
   var marker = L.marker([64.21540, -19.71381]).addTo(map);
   marker.bindPopup("Eyjafjallajökull, Iceland");
+  var London = L.marker([51.4706, -0.461941]).addTo(map);
+  London.bindPopup("London Heathrow Airport");
+  var Paris = L.marker([49.0128, 2.55]).addTo(map);
+  Paris.bindPopup("Charles de Gaulle International Airport");
+  var Amsterdam = L.marker([52.3086, 4.76389]).addTo(map);
+  Amsterdam.bindPopup("Amsterdam Airport Schiphol");
+  var Frankfurt = L.marker([50.03333, 8.57055]).addTo(map);
+  Frankfurt.bindPopup("Frankfurt am Main Airport");
+  var Madrid = L.marker([40.47193, -3.56264]).addTo(map);
+  Madrid.bindPopup("Adolfo Suárez de Madrid-Barajas Airport");
+  var Barcelona = L.marker([41.2971, 2.07846]).addTo(map);
+  Barcelona.bindPopup("Barcelona International Airport");
+  var Istanbul = L.marker([41.27528, 28.751944]).addTo(map);
+  Istanbul.bindPopup("Istanbul Airport");
+  var Moscow = L.marker([55.972599, 37.4146]).addTo(map);
+  Moscow.bindPopup("Moscow Sheremetyevo International Airport");
+  var Munich = L.marker([48.3538, 11.7861]).addTo(map);
+  Munich.bindPopup("Munich Airport");
+  var Gatwick = L.marker([51.1481, -0.190278]).addTo(map);
+  Gatwick.bindPopup("London Gatwick Airport");
+  var Rome = L.marker([41.80028, 12.2388889]).addTo(map);
+  Rome.bindPopup("Leonard da Vinci Fiumicino Airport");
+  var Dublin = L.marker([53.4213,-6.27007]).addTo(map);
+  Dublin.bindPopup("Dublin Airport");
+  var Orly = L.marker([48.72333, 2.3794444]).addTo(map);
+  Orly.bindPopup("Paris-Orly Airport");
+  var Vienna = L.marker([48.1103, 16.56970025]).addTo(map);
+  Vienna.bindPopup("Vienna International Airport");
+  var Zurich = L.marker([47.4647, 8.54917]).addTo(map);
+  Zurich.bindPopup("Zurich Airport");
+  var Lisbon = L.marker([38.7813, -9.13592]).addTo(map);
+  Lisbon.bindPopup("Lisbon Airport");
+  var Copenhagen = L.marker([55.6179,12.656]).addTo(map);
+  Copenhagen.bindPopup("Copenhagen Kastrup Airport");
+  var Palma = L.marker([39.5517, 2.7388100]).addTo(map);
+  Palma.bindPopup("Palma De Mallorca Airport");
+  var Manchester = L.marker([53.3537,-2.274]).addTo(map);
+  Manchester.bindPopup("Manchester Airport");
+  var Milan = L.marker([45.6306, 8.72811]).addTo(map);
+  Milan.bindPopup("Milan Malpensa International Airport");
+
+
+
 
 
 
@@ -611,24 +654,7 @@ var overlayMaps = {
   "1200 May 8": May8_12obj
 };
 
-$.get('./EuroAirports.csv', function(csvString) {
 
-    // Use PapaParse to convert string to array of objects
-    var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
-
-    // For each row in data, create a marker and add it to the map
-    // For each row, columns `Latitude`, `Longitude`, and `Title` are required
-    for (var i in data) {
-      var row = data[i];
-
-      var marker1 = L.marker([row.Latitude, row.Longitude], {
-        opacity: 1
-      }).bindPopup(row.Name);
-
-      marker1.addTo(map);
-    }
-
-  });
 
  //var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
